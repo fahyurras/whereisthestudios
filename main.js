@@ -20,7 +20,7 @@ document.querySelectorAll('.nav-btn').forEach((item) => {
   });
 });
 
-const text = "Hi, we are Where Is The Studio! We are independent studio based in Lampung, Indonesia. Where Is The Studio founded since November 2026. We love making apps and games.";
+const text = "Hi, we are Where Is The Studio! We are independent studio based in Lampung, Indonesia. Where Is The Studio founded since November 2026 by Fahreza Yurian Rastafara. We love making apps and games.";
 let index = 0;
 
 function typingText() {
