@@ -10,14 +10,14 @@
   
   <meta property="og:title" content="Where Is The Studio">
   <meta property="og:description" content="Hi, we are Where Is The Studio! We are independent studio based in Lampung, Indonesia. Where Is The Studio founded since November 2026 by Fahreza Yurian Rastafara. We love making apps and games.">
-  <meta property="og:image" content="https://whereisthestudios.vercel.app/witslogo.png">
+  <meta property="og:image" content="https://whereisthestudios.vercel.app/witslogo.jpg">
   <meta property="og:url" content="https://whereisthestudios.vercel.app">
   <meta property="og:type" content="website">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Where Is The Studio">
   <meta name="twitter:description" content="Hi, we are Where Is The Studio! We are independent studio based in Lampung, Indonesia. Where Is The Studio founded since November 2026 by Fahreza Yurian Rastafara. We love making apps and games.">
-  <meta name="twitter:image" content="https://whereisthestudios.vercel.app/witslogo.png">
+  <meta name="twitter:image" content="https://whereisthestudios.vercel.app/witslogo.jpg">
   
   <title>Where Is The Studio</title>
   <link rel="stylesheet" href="style.css">
@@ -28,90 +28,92 @@
 <body>
   
   <header class="main-header">
-    <div class="header-wrapper">
+    <div class="header-content-wrapper">
       <div class="logo-wrapper">
-        <img src="witslogo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" onclick="window.location.reload()">
+        <img src="witslogoicon.png" alt="Where Is The Studio Logo" style="width: 100%; height: 100%; object-fit: cover;" onclick="window.location.reload()">
       </div>
       <span id="menu-btn">&#9776;</span>
     </div>
     <nav class="nav-btn-container">
       <ul class="nav-btn-wrapper">
-        <li class="nav-btn active">
-          <a href="#home">Home</a>
-        </li>
-        <li class="nav-btn">
-          <a href="#about">About</a>
-        </li>
-        <li class="nav-btn">
-          <a href="#project">Project</a>
-        </li>
-        <li class="nav-btn">
-          <a href="#contact">Contact</a>
-        </li>
+        <li class="nav-btn active">Home</li>
+        <li class="nav-btn">About</li>
+        <li class="nav-btn">Project</li>
+        <li class="nav-btn">Blog</li>
+        <li class="nav-btn">Contact</li>
       </ul>
     </nav>
   </header>
   
-  <main class="content-container-wrapper" id="home">
-    <section class="about-container" id="about">
-      <h3 class="about-container-title">About</h3>
-      <p class="about-container-desc"><span id="typing-text"></span><span id="cursor">|</span></p>
+  <main class="content-card-wrapper">
+    <section class="content-card show">
+      <h2 class="content-card-title">About</h2>
+      <p class="about-description"><span id="typing-text"></span><span id="cursor">|</span></p>
+      <div class="dev-card-wrapper">
+        <span class="dev-card-wrapper-title">People</span>
+        <div class="dev-card">
+          <span class="dev-categories">CEO & Founder</span>
+          <div class="dev-picture-wrapper">
+            <img src="fahyurraspicture.jpg" alt="Fahreza Yurian Rastafara Picture" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <span class="dev-card-name">Fahreza Yurian Rastafara</span>
+          <a class="dev-card-link-btn" href="https://fahyurras.vercel.app" target="_blank" rel="noopener noreferrer" aria-level="Fahreza Yurian Rastafara's Website">Visit Site</a>
+        </div>
+      </div>
     </section>
-    <section class="project-container" id="project">
-      <h3 class="project-container-title">Project</h3>
-      <div class="project-wrapper-container">
-        <div class="project-wrapper-nav-btn-container">
-          <ul class="project-wrapper-nav-btn-wrapper">
-            <li class="project-wrapper-nav-btn active">
-              <a href="#all-categories">All</a>
-            </li>
-            <li class="project-wrapper-nav-btn">
-              <a href="#apps-categories">Apps</a>
-            </li>
-            <li class="project-wrapper-nav-btn">
-              <a href="#games-categories">Games</a>
-            </li>
-            
-            <li class="project-wrapper-nav-btn-indicator"></li>
+    <section class="content-card show">
+      <h2 class="content-card-title">Project</h2>
+      <div class="project-card-container">
+        <div class="project-card-wrapper-nav-btn-container">
+          <ul class="project-card-wrapper-nav-btn-wrapper">
+            <li class="project-card-wrapper-nav-btn active">All</li>
+            <li class="project-card-wrapper-nav-btn">Apps</li>
+            <li class="project-card-wrapper-nav-btn">Games</li>
+            <li class="project-card-wrapper-nav-btn-indicator"></li>
           </ul>
         </div>
-        <div class="project-wrapper">
-          <div class="project-wrapper-addition active">
-            <h4 class="project-wrapper-addition-title">Apps</h4>
-            <p class="sign-under-construction">There isn't any yet.</p>
+        <div class="project-card-wrapper">
+          <div class="project-card show">
+            <h4 class="project-card-title">Apps</h4>
+            <span class="signs-in-development">There isn't any yet.</span>
           </div>
-          <div class="project-wrapper-addition active">
-            <h4 class="project-wrapper-addition-title">Games</h4>
-            <p class="sign-under-construction">There isn't any yet.</p>
+          <div class="project-card show">
+            <h4 class="project-card-title">Games</h4>
+            <span class="signs-in-development">There isn't any yet.</span>
           </div>
         </div>
       </div>
     </section>
+    <section class="content-card show">
+      <h2 class="content-card-title">Blog</h2>
+      <span class="signs-in-development">There isn't any yet.</span>
+    </section>
+    <section class="content-card show" id="footer-container">
+      <footer class="footer-wrapper">
+        <div class="link-container">
+          <a class="link-icon" id="link-youtube" href="https://www.youtube.com/@WhereIsTheStudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a class="link-icon" id="link-tiktok" href="https://www.tiktok.com/@where.is.the.stud" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a class="link-icon" id="link-instagram" href="https://www.instagram.com/whereisthestudios" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="link-icon" id="link-facebook" href="https://www.facebook.com/whereisthestudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a class="link-icon" id="link-x" href="https://x.com/whereisthestud" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a class="link-icon" id="link-threads" href="https://www.threads.net/@whereisthestudios" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+            <i class="fa-brands fa-square-threads"></i>
+          </a>
+        </div>
+        <p class="copyright-text">© <span id="year"></span> Where Is The Studio</p>
+      </footer>
+    </section>
   </main>
-  
-  <footer class="contact-container" id="contact">
-    <div class="link-btn-wrapper">
-      <a class="link-btn" id="link-youtube" href="https://www.youtube.com/@WhereIsTheStudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-      <a class="link-btn" id="link-tiktok" href="https://www.tiktok.com/@where.is.the.stud" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-      <a class="link-btn" id="link-instagram" href="https://www.instagram.com/whereisthestudios" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a class="link-btn" id="link-facebook" href="https://www.facebook.com/whereisthestudio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-      <a class="link-btn" id="link-x" href="https://x.com/whereisthestud" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
-      <a class="link-btn" id="link-threads" href="https://www.threads.net/@whereisthestudios" target="_blank" rel="noopener noreferrer" aria-label="Threads">
-        <i class="fa-brands fa-square-threads"></i>
-      </a>
-    </div>
-    <p class="credit-title">© <span id="year"></span> Where Is The Studio</p>
-  </footer>
   
   <script src="main.js"></script>
 </body>

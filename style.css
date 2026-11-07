@@ -1,7 +1,7 @@
-/* 1. Inisialisasi */
+/* 1. Initialization */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* 2. Dasar */
+/* 2. Base */
 * {
   margin: 0;
   padding: 0;
@@ -9,424 +9,303 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  width: 100%;
-  min-height: 100dvh;
-  background: linear-gradient(45deg, #5198FF, #62BEFF, #99C7FF);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-}
+body { width: 100%; min-height: 100dvh; background: #202020; }
 
-/* 3. Judul */
-/* Judul Utama */
+/* 3. Header */
+/* Main Section */
 .main-header {
   width: 100%;
   height: auto;
-  position: fixed;
-  background: rgba(4,4,4,0.5);
-  padding: 10px;
-  top: 0;
-  left: 0;
+  position: sticky;
+  background: #282828;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
   gap: 5px;
+  overflow: hidden;
   z-index: 100;
+  top: 0;
+  left: 0;
   transition: 0.3s ease;
   animation: showHeader 0.75s ease;
 }
 
-/* Pembungkus Judul */
-.header-wrapper {
-  padding: 0 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Header Content Wrapper */
+.header-content-wrapper { display: flex; justify-content: space-between; align-items: center; }
+
+/* Logo Wrapper */
+.logo-wrapper { width: 50px; height: 50px; overflow: hidden; }
+
+/* Menu Button */
+#menu-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s ease;
 }
 
-.logo-wrapper { width: 40px; height: 40px; overflow: hidden; }
-#menu-btn { font-size: 1.65rem; font-weight: 600; color: white; }
-
-/* Kontainer Tombol Navigasi */
+/* Navigation Button Container */
 .nav-btn-container {
   width: 100%;
-  height: auto;
-  background: rgba(4,4,4,0.25);
-  border: 1px solid rgba(2,2,2,0.75);
-  border-radius: 20px;
-  display: none;
+  max-height: 0;
+  background: #323232;
+  border: 1px solid #343434;
+  border-radius: 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-btn-container.show { max-height: 325px; padding: 5px; opacity: 1; }
+
+/* Navigation Button Wrapper */
+.nav-btn-wrapper { display: flex; flex-direction: column; gap: 5px; }
+
+/* Navigation Button */
+.nav-btn {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #848484;
+  list-style: none;
+  transition: 0.3s ease;
+}
+
+.nav-btn.active { color: white; border-bottom: 2px solid #eee; }
+
+/* 4. Content Card Wrapper */
+/* Main Container */
+.content-card-wrapper {
+  display: flex;
+  flex-direction: column;
   transition: 0.3s ease;
   animation: showContainerItem 0.75s ease;
 }
 
-.nav-btn-wrapper {
-  padding: 10px;
-  display: flex;
+/* Content Card */
+.content-card {
+  background: white;
+  border-top: 1px solid #bbb;
+  padding: 5px;
+  display: none;
   flex-direction: column;
   gap: 5px;
-}
-
-.nav-btn, .nav-btn a {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: white;
-  list-style: none;
-  text-decoration: none;
-}
-
-.nav-btn.active { border-bottom: 2px solid #666; }
-
-/* 4. Pembungkus Kontainer Konten */
-.content-container-wrapper {
-  background: rgba(4,4,4,0.5);
-  border: 1px solid rgba(4,4,4,0.75);
-  border-radius: 20px;
-  margin: 70px 5px auto 5px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  animation: showContainerItem 0.75s ease;
-}
-
-/* Kontainer */
-.about-container,
-.project-container {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  transition: 0.3s ease;
   animation: showContainerItem 1.25s ease;
 }
 
-/* Judul Kontainer */
-.about-container-title,
-.project-container-title { font-size: 1.4rem; font-weight: 600; color: white; }
+.content-card.show { display: flex; }
 
-/* Isi Kontainer (Tentang) */
-.about-container-desc { font-size: 1.1rem; font-weight: 500; color: white; }
-#cursor { font-weight: bold; color: #0086F9; animation: 1s blink infinite; }
-
-/* Isi Kontainer (Proyek) */
-.project-wrapper-container {
-  width: 100%;
-  background: rgba(6,6,6,0.25);
-  border: 1px solid rgba(6,6,6,0.5);
-  border-radius: 20px;
-  padding: 5px;
-}
-
-.project-wrapper-nav-btn-wrapper {
-  background: rgba(250, 250, 250, 0.5);
-  border: 1px solid rgba(250, 250, 250, 0.25);
-  border-radius: 10px;
-  position: relative;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-wrapper-nav-btn, .project-wrapper-nav-btn a {
-  flex: 1;
-  color: black;
-  list-style: none;
-  text-decoration: none;
+/* Content Card Title */
+.content-card-title {
+  font-size: 1.45rem;
+  font-weight: bold;
+  color: #242424;
+  border-bottom: 1px solid #262626;
   text-align: center;
 }
 
-.project-wrapper-nav-btn-indicator {
-  width: 0;
-  height: 3px;
-  position: absolute;
-  background: #58A7FF;
-  border-radius: 20px;
-  bottom: 0;
-  left: 0;
-  list-style: none;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+/* Content Card Content (About) */
+.about-description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #565656;
+  text-align: center;
 }
 
-.project-wrapper {
-  padding: 5px 0 0 0;
+#cursor { font-weight: bold; color: #131313; animation: blink 1s infinite; }
+
+.dev-card-wrapper {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.project-wrapper-addition {
-  background: white;
-  border-radius: 20px;
-  display: none;
-  flex-direction: column;
+.dev-card-wrapper-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #686868;
+  text-align: center;
 }
 
-.project-wrapper-addition.active { display: flex; }
-
-.project-wrapper-addition-title,
-.sign-under-construction { flex: 1; text-align: center; }
-
-/* 5. Kontainer Kontak */
-/* Kontainer Dasar */
-.contact-container {
-  width: 100%;
-  height: auto;
-  background: rgba(4,4,4, 0.5);
+.dev-card {
+  background: #e9e9e9;
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  margin: 0 auto 0 auto;
   padding: 5px;
   display: flex;
   flex-direction: column;
-  animation: showCredit 0.75s ease;
+  gap: 5px;
 }
 
-/* Pembungkus Tombol Tautan */
-.link-btn-wrapper { padding: 0 5px; display: flex; gap: 5px; }
+.dev-categories {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #454545;
+  text-align: center;
+}
 
-/* Tombol Tautan */
-.link-btn, .link-btn i {
-  font-size: 1.5rem;
+.dev-picture-wrapper {
+  width: 150px;
+  height: 150px;
+  background: #f4f4f4;
+  border: 1px solid #f8f8f8;
+  border-radius: 10px;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+}
+
+.dev-card-name {
+  font-size: 1.2rem;
   font-weight: 500;
-  color: white;
+  color: #393939;
+  text-align: center;
+}
+
+.dev-card-link-btn {
+  flex: 1;
+  background: white;
+  border: 1px solid #f2f2f2;
+  color: #454545;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
-/* Judul Kredit */
-.credit-title { font-size: 1.1rem; font-weight: 500; color: white; }
+.dev-card-link-btn:hover { background: #eee; color: #474747; }
 
-/* Tombol-Tombol Tautan */
-#link-youtube i:hover { color: #FF4442; }
-#link-tiktok i:hover { color: cyan; }
-#link-instagram i:hover { color: #e1306c; }
-#link-facebook i:hover { color: #3490FF; }
-#link-x i:hover,
-#link-threads i:hover { color: black; }
+/* Content Card Content (Project) */
+.project-card-container {
+  background: #e9e9e9;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
-/* 6. Animasi */
+.project-card-wrapper-nav-btn-container {
+  background: rgba(250, 250, 250, 0.75);
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-wrapper-nav-btn-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-card-wrapper-nav-btn {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #727272;
+  list-style: none;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.project-card-wrapper-nav-btn.active { color: #151515; }
+
+.project-card-wrapper-nav-btn-indicator {
+  width: 0;
+  height: 4px;
+  position: absolute;
+  background: #212121;
+  border-radius: 10px;
+  bottom: -4.5px;
+  left: 0;
+  transition: 0.3s ease;
+  list-style: none;
+}
+
+.project-card-wrapper {
+  padding: 0 0 5px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-card {
+  background: #d1d1d1;
+  border: 1px solid #c7c7c7;
+  border-radius: 10px;
+  padding: 5px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-card.show { display: flex; }
+
+.project-card-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #454545;
+  text-align: center;
+}
+
+/* Content Card Content (Blog) */
+.signs-in-development {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #232323;
+  text-align: center;
+}
+
+/* Content Card Content (Footer) */
+#footer-container { background: #383838; border: none; padding: 5px; }
+
+.footer-wrapper { display: flex; flex-direction: column; gap: 5px; }
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.link-icon {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+#link-youtube:hover { color: #FF2A2A; }
+#link-tiktok:hover { color: cyan; }
+#link-instagram:hover { color: #e1036c; }
+#link-facebook:hover { color: #077aff; }
+#link-x:hover, #link-threads:hover { color: black; }
+
+.copyright-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+/* 5. Animation */
+/* Header */
 @keyframes showHeader { from { opacity: 0; transform: translate(0, -100%); } to { opacity: 1; transform: translate(0, 0); } }
 
-@keyframes showContainerItem { from { opacity: 0; } to { opacity: 1; } }
+/* Container */
+@keyframes showContainerItem { from { opacity: 0; transform: translate(0, 100%); } to { opacity: 1; transform: translate(0, 0); } }
 
-@keyframes showCredit { from { opacity: 0; transform: translate(0, 100%); } to { opacity: 1; transform: translate(0, 0); } }
-
+/* Cursor */
 @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
-
-/* 7. Responsif Layar */
-/* Tablet */
-@media (min-width: 600px) {
-  /* Judul */
-  .header-wrapper { padding: 0 7px; }
-  .logo-wrapper { width: 44px; height: 44px; }
-  #menu-btn { font-size: 1.69rem; }
-  
-  /* Kontainer Navigasi Pada Judul */
-  .nav-btn-wrapper { padding: 14px; gap: 9px; }
-  .nav-btn, .nav-btn a { font-size: 1.24rem; }
-  .nav-btn.active { border-bottom: 4px solid #666; }
-  
-  /* Pembungkus Kontainer Konten */
-  .content-container-wrapper {
-    border-bottom: 5px solid rgba(4,4,4,0.75);
-    margin: 74px 7px auto 7px;
-    padding: 9px;
-    gap: 9px;
-  }
-  
-  /* Kontainer */
-  .about-container,
-  .project-container { padding: 9px; }
-  
-  /* Judul Kontainer */
-  .about-container-title,
-  .project-container-title { font-size: 1.44rem; }
-
-  /* Isi Kontainer (Tentang) */
-  .about-container-desc { font-size: 1.12rem; }
-  
-  /* Isi Kontainer (Proyek) */
-  .project-wrapper-container { border: 5px solid rgba(6,6,6,0.5); padding: 9px; }
-  .project-wrapper-nav-btn-wrapper { border: 5px solid rgba(250, 250, 250, 0.25); border-radius: 16px; padding: 11px; }
-  .project-wrapper-nav-btn, .project-wrapper-nav-btn a { font-size: 1.06rem; }
-  .project-wrapper-nav-btn-indicator { height: 7px; }
-  .project-wrapper { padding: 11px 0 0 0; gap: 11px; }
-  .project-wrapper-addition { padding: 11px; }
-  .sign-under-construction { font-size: 1.83rem; }
-  
-  /* Kontainer Kontak */
-  .contact-container { padding: 13px; }
-
-  /* Pembungkus Tombol Tautan */
-  .link-btn-wrapper { padding: 0 11px; display: flex; gap: 11px; }
-
-  /* Tombol Tautan */
-  .link-btn, .link-btn i { font-size: 1.74rem; font-weight: 500; }
-  
-  /* Judul Kredit */
-  .credit-title { font-size: 1.44rem; font-weight: 500; }
-}
-
-/* Laptop */
-@media (min-width: 768px) {
-  /* Judul */
-  .header-wrapper { padding: 0 19px; }
-  .logo-wrapper { width: 116px; height: 116px; }
-  #menu-btn { font-size: 3.1rem; }
-  
-  /* Kontainer Navigasi Pada Judul */
-  .nav-btn-wrapper { padding: 16px; gap: 11px; }
-  .nav-btn, .nav-btn a { font-size: 1.26rem; }
-  .nav-btn.active { border-bottom: 6px solid #666; }
-  
-  /* Pembungkus Kontainer Konten */
-  .content-container-wrapper {
-    border: 9px solid rgba(4,4,4,0.75);
-    margin: 145px 15px auto 15px;
-    padding: 17px;
-    gap: 17px;
-  }
-  
-  /* Kontainer */
-  .about-container,
-  .project-container { padding: 15px; }
-  
-  /* Judul Kontainer */
-  .about-container-title,
-  .project-container-title { font-size: 3rem; }
-
-  /* Isi Kontainer (Tentang) */
-  .about-container-desc { font-size: 2.46rem; }
-  
-  /* Isi Kontainer (Proyek) */
-  .project-wrapper-container { border: 11px solid rgba(6,6,6,0.5); padding: 11px; }
-  .project-wrapper-nav-btn-wrapper { border: 9px solid rgba(250, 250, 250, 0.25); border-radius: 20px; padding: 17px; }
-  .project-wrapper-nav-btn, .project-wrapper-nav-btn a { font-size: 2rem; }
-  .project-wrapper-nav-btn-indicator { height: 13px; }
-  .project-wrapper { padding: 11px 0 0 0; gap: 11px; }
-  .project-wrapper-addition { padding: 15px; }
-  .project-wrapper-addition-title { font-size: 2.3rem; }
-  
-  /* Kontainer Kontak */
-  .contact-container { padding: 11px; }
-
-  /* Pembungkus Tombol Tautan */
-  .link-btn-wrapper { padding: 0 11px; gap: 11px; }
-
-  /* Tombol Tautan */
-  .link-btn, .link-btn i { font-size: 2.16rem; font-weight: 500; }
-  
-  /* Judul Kredit */
-  .credit-title { font-size: 1.46rem; font-weight: 500; }
-}
-
-/* PC / Desktop */
-@media (min-width: 992px) {
-  /* Judul */
-  .header-wrapper { padding: 0 23px; }
-  .logo-wrapper { width: 118px; height: 118px; }
-  #menu-btn { font-size: 3.16rem; }
-  
-  /* Kontainer Navigasi Pada Judul */
-  .nav-btn-wrapper { padding: 16px; gap: 11px; }
-  .nav-btn, .nav-btn a { font-size: 1.26rem; }
-  .nav-btn.active { border-bottom: 6px solid #666; }
-  
-  /* Pembungkus Kontainer Konten */
-  .content-container-wrapper {
-    border: 9px solid rgba(4,4,4,0.75);
-    margin: 150px 15px auto 15px;
-    padding: 19px;
-    gap: 19px;
-  }
-  
-  /* Kontainer */
-  .about-container,
-  .project-container { padding: 17px; }
-  
-  /* Judul Kontainer */
-  .about-container-title,
-  .project-container-title { font-size: 3.06rem; }
-
-  /* Isi Kontainer (Tentang) */
-  .about-container-desc { font-size: 2.52rem; }
-  
-  /* Isi Kontainer (Proyek) */
-  .project-wrapper-container { border: 11px solid rgba(6,6,6,0.5); padding: 13px; }
-  .project-wrapper-nav-btn-wrapper { border: 11px solid rgba(250, 250, 250, 0.25); border-radius: 20px; padding: 19px; }
-  .project-wrapper-nav-btn, .project-wrapper-nav-btn a { font-size: 2.04rem; }
-  .project-wrapper-nav-btn-indicator { height: 15px; }
-  .project-wrapper { padding: 13px 0 0 0; gap: 13px; }
-  .project-wrapper-addition { padding: 17px; }
-  .project-wrapper-addition-title { font-size: 2.38rem; }
-  
-  /* Kontainer Kontak */
-  .contact-container { padding: 13px; }
-
-  /* Pembungkus Tombol Tautan */
-  .link-btn-wrapper { padding: 0 13px; gap: 13px; }
-
-  /* Tombol Tautan */
-  .link-btn, .link-btn i { font-size: 2.6rem; font-weight: 500; }
-  
-  /* Judul Kredit */
-  .credit-title { font-size: 1.98rem; font-weight: 500; }
-}
-
-/* TV */
-@media (min-width: 1200px) {
-  /* Judul */
-  .header-wrapper { padding: 0 27px; }
-  .logo-wrapper { width: 124px; height: 124px; }
-  #menu-btn { font-size: 3.28rem; }
-  
-  /* Kontainer Navigasi Pada Judul */
-  .nav-btn-wrapper { padding: 22px; gap: 15px; }
-  .nav-btn, .nav-btn a { font-size: 1.34rem; }
-  .nav-btn.active { border-bottom: 9px solid #666; }
-  
-  /* Pembungkus Kontainer Konten */
-  .content-container-wrapper {
-    border: 11px solid rgba(4,4,4,0.75);
-    margin: 155px 17px auto 17px;
-    padding: 23px;
-    gap: 23px;
-  }
-  
-  /* Kontainer */
-  .about-container,
-  .project-container { padding: 21px; }
-  
-  /* Judul Kontainer */
-  .about-container-title,
-  .project-container-title { font-size: 3.24rem; }
-
-  /* Isi Kontainer (Tentang) */
-  .about-container-desc { font-size: 2.6rem; }
-  
-  /* Isi Kontainer (Proyek) */
-  .project-wrapper-container { border: 11px solid rgba(6,6,6,0.5); padding: 15px; }
-  .project-wrapper-nav-btn-wrapper { border: 11px solid rgba(250, 250, 250, 0.25); border-radius: 20px; padding: 19px; }
-  .project-wrapper-nav-btn, .project-wrapper-nav-btn a { font-size: 2.32rem; }
-  .project-wrapper-nav-btn-indicator { height: 19px; }
-  .project-wrapper { padding: 17px 0 0 0; gap: 17px; }
-  .project-wrapper-addition { padding: 21px; }
-  .project-wrapper-addition-title { font-size: 2.42rem; }
-  
-  /* Kontainer Kontak */
-  .contact-container { padding: 21px; }
-
-  /* Pembungkus Tombol Tautan */
-  .link-btn-wrapper { padding: 0 21px; gap: 21px; }
-
-  /* Tombol Tautan */
-  .link-btn, .link-btn i { font-size: 2.72rem; font-weight: 500; }
-  
-  /* Judul Kredit */
-  .credit-title { font-size: 2.40rem; font-weight: 500; }
-}
