@@ -309,3 +309,160 @@ body { width: 100%; min-height: 100dvh; background: #202020; }
 
 /* Cursor */
 @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+
+/* 6. Media Query */
+/* Tablet */
+@media (min-width: 480px) {
+  /* Main Header */
+  .main-header { padding: 7px; gap: 7px; }
+  .logo-wrapper { width: 56px; height: 56px; }
+  #menu-btn { font-size: 1.52rem; }
+  .nav-btn-container.show { max-height: 327px; padding: 7px; }
+  .nav-btn-container { border: 2.5px solid #343434; }
+  .nav-btn-container.show { max-height: 327px; padding: 7px; }
+  .nav-btn-wrapper,
+  .footer-wrapper,
+  .project-card-wrapper-nav-btn-wrapper,
+  .link-container { gap: 7px; }
+  
+  /* Content Card */
+  .content-card { border: 3px solid #bbb; padding: 7px; gap: 7px; }
+  .content-card-title { font-size: 1.47rem; border-bottom: 3px solid #262626; }
+  .about-description { font-size: 1.22rem; }
+  .dev-card-wrapper { border: 3px solid #444; padding: 7px; gap: 7px; }
+  .dev-card-wrapper-title { font-size: 1.27rem; }
+  .dev-card { border: 3px solid #ededed; padding: 7px; gap: 7px; }
+  .dev-categories { font-size: 1.17rem; }
+  .dev-picture-wrapper { width: 152px; height: 152px; border: 3px solid #f8f8f8; }
+  .dev-card-name { font-size: 1.22rem; }
+  .dev-card-link-btn { border: 3px solid #f2f2f2; padding: 7px; font-size: 1.07rem; }
+  .project-card-container { padding: 7px; gap: 7px; }
+  .project-card-wrapper-nav-btn-container { border: 3px solid rgba(250, 250, 250, 0.5); padding: 7px; }
+  .project-card-wrapper-nav-btn-wrapper { gap: 7px; }
+  .project-card-wrapper-nav-btn,
+  .copyright-text { font-size: 1.12rem; }
+  .project-card-wrapper-nav-btn-indicator { height: 4.2px; bottom: -4.7px; }
+  .project-card-wrapper { padding: 0 0 7px 0; gap: 7px; }
+  .project-card { border: 3px solid #c7c7c7; padding: 7px; gap: 7px; }
+  .project-card-title { font-size: 1.15rem;}
+  .signs-in-development { font-size: 1.07rem; }
+  #footer-container { padding: 7px; }
+  .link-icon { font-size: 1.7rem; }
+}
+
+/* Laptop */
+@media (min-width: 768px) {
+  /* Main Header */
+  .main-header { padding: 11px; gap: 11px; }
+  .logo-wrapper { width: 60px; height: 60px; }
+  #menu-btn { font-size: 1.58rem; }
+  .nav-btn-container.show { max-height: 331px; padding: 11px; }
+  .nav-btn-container { border: 5px solid #343434; }
+  .nav-btn-container.show { max-height: 331px; padding: 11px; }
+  .nav-btn-wrapper,
+  .footer-wrapper,
+  .project-card-wrapper-nav-btn-wrapper,
+  .link-container { gap: 13px; }
+  
+  /* Content Card */
+  .content-card { border: 7px solid #bbb; padding: 13px; gap: 13px; }
+  .content-card-title { font-size: 1.53rem; border-bottom: 9px solid #262626; }
+  .about-description { font-size: 1.28rem; }
+  .dev-card-wrapper { border: 9px solid #444; padding: 13px; gap: 13px; }
+  .dev-card-wrapper-title { font-size: 1.31rem; }
+  .dev-card { border: 11px solid #ededed; padding: 13px; gap: 13px; }
+  .dev-categories { font-size: 1.23rem; }
+  .dev-picture-wrapper { width: 158px; height: 158px; border: 9px solid #f8f8f8; }
+  .dev-card-name { font-size: 1.28rem; }
+  .dev-card-link-btn { border: 9px solid #f2f2f2; padding: 13px; font-size: 1.13rem; }
+  .project-card-container { padding: 13px; gap: 13px; }
+  .project-card-wrapper-nav-btn-container { border: 11px solid rgba(250, 250, 250, 0.5); padding: 13px; }
+  .project-card-wrapper-nav-btn-wrapper { gap: 13px; }
+  .project-card-wrapper-nav-btn,
+  .copyright-text { font-size: 1.17rem; }
+  .project-card-wrapper-nav-btn-indicator { height: 4.8px; bottom: -4.13px; }
+  .project-card-wrapper { padding: 0 0 13px 0; gap: 13px; }
+  .project-card { border: 9px solid #c7c7c7; padding: 13px; gap: 13px; }
+  .project-card-title { font-size: 1.21rem; }
+  .signs-in-development { font-size: 1.13rem; }
+  #footer-container { padding: 13px; }
+  .link-icon { font-size: 2.3rem; }
+}
+
+/* PC / Desktop */
+@media (min-width: 992px) {
+  /* Main Header */
+  .main-header { padding: 19px; gap: 19px; }
+  .logo-wrapper { width: 68px; height: 68px; }
+  #menu-btn { font-size: 1.64rem; }
+  .nav-btn-container.show { max-height: 337px; padding: 19px; }
+  .nav-btn-container { border: 15px solid #343434; }
+  .nav-btn-container.show { max-height: 337px; padding: 19px; }
+  .nav-btn-wrapper,
+  .footer-wrapper,
+  .project-card-wrapper-nav-btn-wrapper,
+  .link-container { gap: 21px; }
+  
+  /* Content Card */
+  .content-card { border: 15px solid #bbb; padding: 21px; gap: 21px; }
+  .content-card-title { font-size: 1.61rem; border-bottom: 15px solid #262626; }
+  .about-description { font-size: 1.36rem; }
+  .dev-card-wrapper { border: 17px solid #444; padding: 21px; gap: 21px; }
+  .dev-card-wrapper-title { font-size: 1.39rem; }
+  .dev-card { border: 19px solid #ededed; padding: 21px; gap: 21px; }
+  .dev-categories { font-size: 1.31rem; }
+  .dev-picture-wrapper { width: 164px; height: 164px; border: 15px solid #f8f8f8; }
+  .dev-card-name { font-size: 1.36rem; }
+  .dev-card-link-btn { border: 15px solid #f2f2f2; padding: 21px; font-size: 1.21rem; }
+  .project-card-container { padding: 21px; gap: 21px; }
+  .project-card-wrapper-nav-btn-container { border: 19px solid rgba(250, 250, 250, 0.5); padding: 21px; }
+  .project-card-wrapper-nav-btn-wrapper { gap: 21px; }
+  .project-card-wrapper-nav-btn,
+  .copyright-text { font-size: 1.23rem; }
+  .project-card-wrapper-nav-btn-indicator { height: 5.4px; bottom: -4.21px; }
+  .project-card-wrapper { padding: 0 0 13px 0; gap: 13px; }
+  .project-card { border: 9px solid #c7c7c7; padding: 13px; gap: 13px; }
+  .project-card-title { font-size: 1.21rem; }
+  .signs-in-development { font-size: 1.13rem; }
+  #footer-container { padding: 13px; }
+  .link-icon { font-size: 2.3rem; }
+}
+
+/* TV */
+@media (min-width: 1200px) {
+  /* Main Header */
+  .main-header { padding: 27px; gap: 27px; }
+  .logo-wrapper { width: 76px; height: 76px; }
+  #menu-btn { font-size: 1.74rem; }
+  .nav-btn-container.show { max-height: 345px; padding: 27px; }
+  .nav-btn-container { border: 23px solid #343434; }
+  .nav-btn-container.show { max-height: 345px; padding: 29px; }
+  .nav-btn-wrapper,
+  .footer-wrapper,
+  .project-card-wrapper-nav-btn-wrapper,
+  .link-container { gap: 33px; }
+  
+  /* Content Card */
+  .content-card { border: 21px solid #bbb; padding: 27px; gap: 27px; }
+  .content-card-title { font-size: 1.73rem; border-bottom: 19px solid #262626; }
+  .about-description { font-size: 1.5rem; }
+  .dev-card-wrapper { border: 19px solid #444; padding: 31px; gap: 31px; }
+  .dev-card-wrapper-title { font-size: 1.51rem; }
+  .dev-card { border: 23px solid #ededed; padding: 31px; gap: 31px; }
+  .dev-categories { font-size: 1.55rem; }
+  .dev-picture-wrapper { width: 172px; height: 172px; border: 23px solid #f8f8f8; }
+  .dev-card-name { font-size: 1.4rem; }
+  .dev-card-link-btn { border: 21px solid #f2f2f2; padding: 29px; font-size: 1.27rem; }
+  .project-card-container { padding: 25px; gap: 25px; }
+  .project-card-wrapper-nav-btn-container { border: 23px solid rgba(250, 250, 250, 0.5); padding: 27px; }
+  .project-card-wrapper-nav-btn-wrapper { gap: 27px; }
+  .project-card-wrapper-nav-btn,
+  .copyright-text { font-size: 1.33rem; }
+  .project-card-wrapper-nav-btn-indicator { height: 6px; bottom: -4.33px; }
+  .project-card-wrapper { padding: 0 0 23px 0; gap: 21px; }
+  .project-card { border: 17px solid #c7c7c7; padding: 21px; gap: 21px; }
+  .project-card-title { font-size: 1.33rem; }
+  .signs-in-development { font-size: 1.25rem; }
+  #footer-container { padding: 25px; }
+  .link-icon { font-size: 2.48rem; }
+}
