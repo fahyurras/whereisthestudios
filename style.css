@@ -324,6 +324,7 @@ body { width: 100%; min-height: 100dvh; background: #202020; }
   .footer-wrapper,
   .project-card-wrapper-nav-btn-wrapper,
   .link-container { gap: 7px; }
+  .nav-btn { font-size: 1.14rem; }
   
   /* Content Card */
   .content-card { border: 3px solid #bbb; padding: 7px; gap: 7px; }
@@ -363,6 +364,7 @@ body { width: 100%; min-height: 100dvh; background: #202020; }
   .footer-wrapper,
   .project-card-wrapper-nav-btn-wrapper,
   .link-container { gap: 13px; }
+  .nav-btn { font-size: 1.2rem; }
   
   /* Content Card */
   .content-card { border: 7px solid #bbb; padding: 13px; gap: 13px; }
@@ -402,6 +404,7 @@ body { width: 100%; min-height: 100dvh; background: #202020; }
   .footer-wrapper,
   .project-card-wrapper-nav-btn-wrapper,
   .link-container { gap: 21px; }
+  .nav-btn { font-size: 1.28rem; }
   
   /* Content Card */
   .content-card { border: 15px solid #bbb; padding: 21px; gap: 21px; }
@@ -441,6 +444,7 @@ body { width: 100%; min-height: 100dvh; background: #202020; }
   .footer-wrapper,
   .project-card-wrapper-nav-btn-wrapper,
   .link-container { gap: 33px; }
+  .nav-btn { font-size: 1.34rem; }
   
   /* Content Card */
   .content-card { border: 21px solid #bbb; padding: 27px; gap: 27px; }
